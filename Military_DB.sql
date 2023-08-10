@@ -38,10 +38,12 @@ CREATE TABLE soldier (
     height INT NOT NULL,
     weight INT NOT NULL,
     gender varchar(1) NOT NULL,
-    home_state VARCHAR(20) NOT NULL,
+    district VARCHAR(20) NOT NULL,
     regimentcode VARCHAR(20),
     operationcode VARCHAR(20),
     srank VARCHAR(20) NOT NULL,
+    FOREIGN KEY (district)
+        REFERENCES location (district),
     FOREIGN KEY (regimentcode)
         REFERENCES regiment (regimentcode),
     FOREIGN KEY (operationcode)
